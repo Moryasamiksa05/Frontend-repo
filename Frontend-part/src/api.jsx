@@ -4,7 +4,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'https://backend-6-0m2f.onrender.com/' 
+  baseURL: 'https://backend-7-wsan.onrender.com/' 
 });
 
 export default API;

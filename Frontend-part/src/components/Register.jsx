@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import API from '../api';
-import '../components/styles.css';
+import '../components/Styles.css';
 
 const Register = () => {
   const [form, setForm] = useState({ username: '', email: '', password: '' });

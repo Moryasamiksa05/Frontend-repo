@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import API from '../api';
-import '../components/styles.css';
+import '../components/Styles.css';
 
 const Login = () => {
   const [form, setForm] = useState({ email: '', password: '' });

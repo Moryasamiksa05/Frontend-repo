@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import API from '../api';
-import '../components/styles.css';
+import '../components/Styles.css';
 
 const NameForm = () => {
   const [name, setName] = useState('');

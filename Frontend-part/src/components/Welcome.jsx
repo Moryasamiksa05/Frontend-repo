@@ -8,6 +8,7 @@ const Welcome = () => {
         <Link to="/register" style={{ margin: '0 15px' }}>Register</Link>
         <Link to="/login" style={{ margin: '0 15px' }}>Login</Link>
         <Link to="/name" style={{ margin: '0 15px' }}>Submit Name</Link>
+        <Link to="/edit-profile" style={{ margin: '0 15px' }}>Edit Profile</Link> 
       </div>
       <h1>Welcome to the frontend!</h1>
     </div>

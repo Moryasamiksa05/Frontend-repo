@@ -1,10 +1,7 @@
-
-
-
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'https://backend-10-2cnb.onrender.com/' 
+  baseURL: import.meta.env.VITE_API_BASE_URL || ' http://localhost:3000',
 });
 
 export default API;

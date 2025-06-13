@@ -4,6 +4,7 @@ import Register from './components/Register';
 import Login from './components/Login';
 import NameForm from './components/NameForm';
 import Welcome from './components/Welcome';
+import EditProfile from './components/EditProfile';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/name" element={<NameForm />} />
+        <Route path="/edit-profile" element={<EditProfile />} />
       </Routes>
     </Router>
   );

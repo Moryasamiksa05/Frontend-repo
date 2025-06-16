@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import API from '../api';
 import '../components/Styles.css';
 import { ToastContainer, toast } from 'react-toastify';
@@ -26,7 +26,7 @@ const Login = () => {
 
       toast.success('Login successful!');
       setTimeout(() => {
-        navigate('/'); // Go to Welcome after login
+        navigate('/dashboard'); //  Redirect to dashboard
       }, 1500);
     } catch (err) {
       toast.error(err.response?.data?.error || 'Login failed');
@@ -38,7 +38,7 @@ const Login = () => {
   return (
     <>
       <ToastContainer position="top-right" autoClose={3000} />
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleLogin} className="login-form">
         <h2>Login</h2>
         <input
           name="email"
@@ -58,13 +58,6 @@ const Login = () => {
         <button type="submit" disabled={loadingLogin}>
           {loadingLogin ? <FaSpinner className="spinner" /> : 'Login'}
         </button>
-
-
-        <div  className=" edit">
-          <Link to="/edit-profile" >
-            Edit Profile
-          </Link>
-        </div>
       </form>
     </>
   );

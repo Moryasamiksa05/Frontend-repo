@@ -117,6 +117,58 @@ a:hover{
   animation: spin 1s linear infinite;
   display: inline-block;
 }
+ .dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background: #f5f7fa;
+  padding: 20px;
+}
+
+.dashboard-card {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.dashboard-card h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.dashboard-card p {
+  font-size: 16px;
+  color: #666;
+  margin: 10px 0;
+}
+
+.dashboard-actions {
+  margin-top: 30px;
+}
+
+.dashboard-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.dashboard-button:hover {
+  background-color: #45a049;
+}
+ 
+
+
+ 
+
 
 @keyframes spin {
   0% { transform: rotate(0deg); }

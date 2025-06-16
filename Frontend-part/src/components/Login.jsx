@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import API from '../api';
 import '../components/Styles.css';
 import { ToastContainer, toast } from 'react-toastify';
@@ -14,27 +14,26 @@ const Login = () => {
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
- const handleLogin = async (e) => {
-  e.preventDefault();
-  setLoadingLogin(true);
-  try {
-    const res = await API.post('/login', form);
-    const { user, token } = res.data;
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setLoadingLogin(true);
+    try {
+      const res = await API.post('/login', form);
+      const { user, token } = res.data;
 
-    localStorage.setItem('token', token);
-    localStorage.setItem('user', JSON.stringify(user));
+      localStorage.setItem('token', token);
+      localStorage.setItem('user', JSON.stringify(user));
 
-    toast.success('Login successful!');
-    setTimeout(() => {
-      navigate('/');  // Go to Welcome after login
-    }, 1500);
-  } catch (err) {
-    toast.error(err.response?.data?.error || 'Login failed');
-  } finally {
-    setLoadingLogin(false);
-  }
-};
-
+      toast.success('Login successful!');
+      setTimeout(() => {
+        navigate('/'); // Go to Welcome after login
+      }, 1500);
+    } catch (err) {
+      toast.error(err.response?.data?.error || 'Login failed');
+    } finally {
+      setLoadingLogin(false);
+    }
+  };
 
   return (
     <>
@@ -59,6 +58,13 @@ const Login = () => {
         <button type="submit" disabled={loadingLogin}>
           {loadingLogin ? <FaSpinner className="spinner" /> : 'Login'}
         </button>
+
+
+        <div  className=" edit">
+          <Link to="/edit-profile" >
+            Edit Profile
+          </Link>
+        </div>
       </form>
     </>
   );

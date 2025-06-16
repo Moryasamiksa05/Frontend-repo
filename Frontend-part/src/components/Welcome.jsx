@@ -8,10 +8,9 @@ const Welcome = () => {
       <div className="front "  style={{ fontSize: '18px', marginBottom: '20px' }}>
         <Link to="/register" style={{ margin: '0 15px' }}>Register</Link>
         <Link to="/login" style={{ margin: '0 15px' }}>Login</Link>
-        <Link to="/name" style={{ margin: '0 15px' }}>Submit Name</Link>
-        <Link to="/edit-profile" style={{ margin: '0 15px' }}>Edit Profile</Link> 
+        <Link to="/name" style={{ margin: '0 15px' }}>Submit Name</Link> 
       </div>
-      <h1 >Welcome !</h1>
+      <h1 className='home' >Welcome !</h1>
     </div>
   );
 };

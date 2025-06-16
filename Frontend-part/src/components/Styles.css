@@ -8,6 +8,11 @@ body {
   display: flex;
   justify-content: space-evenly;
 }
+.home{
+  color: #5e0611;
+ 
+}
+
 
 form {
   background: white;
@@ -30,7 +35,7 @@ input {
 
 button {
   padding: 10px;
-  background-color: #007bff;
+  background-color: #031221;
   color: white;
   border: none;
   width: 100%;
@@ -39,7 +44,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #5e0611;
 }
 
 p {
@@ -55,9 +60,26 @@ h1 {
 
 a {
   margin: 0 10px;
-  color: #007bff;
+  color: #021428;
   text-decoration: none;
   align-items: center;
+
+}
+.edit{
+ margin-top: 10px;
+  color: #021428;
+  text-decoration: none;
+  align-items: center;
+
+}
+.edit:hover{
+    color: #5e0611;
+  font-weight: 700;
+
+}
+a:hover{
+  color: #5e0611;
+  font-weight: 700;
 }
 .welcome-container {
   text-align: center;

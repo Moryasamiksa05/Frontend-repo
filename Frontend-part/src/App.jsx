@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import Register from './components/Register';
 import Login from './components/Login';
 import NameForm from './components/NameForm';

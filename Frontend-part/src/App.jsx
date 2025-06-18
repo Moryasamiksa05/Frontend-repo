@@ -19,7 +19,8 @@ function App() {
                 <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/name" element={<NameForm />} />
         <Route path="/edit-profile" element={<EditProfile />} />
-         <Route path="/*" element={<AdminRoutes/>} />
+         <Route path="/admin/*" element={<AdminRoutes />} />
+
       </Routes>
     </Router>
   );

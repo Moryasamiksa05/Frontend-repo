@@ -4,8 +4,8 @@ import AdminDashboard from '../components/admin/AdminDashboard';
 
 const AdminRoutes = () => (
   <Routes>
-    <Route path="/admin/login" element={<AdminLogin />} />
-    <Route path="/admin/dashboard" element={<AdminDashboard />} />
+    <Route path="login" element={<AdminLogin />} />
+    <Route path="dashboard" element={<AdminDashboard />} />
   </Routes>
 );
 

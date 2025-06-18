@@ -10,6 +10,8 @@ body {
 }
 .home{
   color: #5e0611;
+  justify-content: center;
+  display: flex;
  
 }
 

@@ -26,10 +26,12 @@ const Login = () => {
 
       toast.success('Login successful!');
       setTimeout(() => {
-        navigate('/dashboard'); //  Redirect to dashboard
+        navigate('/dashboard');
       }, 1500);
     } catch (err) {
       toast.error(err.response?.data?.error || 'Login failed');
+      //  Clear fields after error
+      setForm({ email: '', password: '' });
     } finally {
       setLoadingLogin(false);
     }

@@ -1,6 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Register from './components/Register';
 import Login from './components/Login';
 import NameForm from './components/NameForm';
@@ -21,6 +20,8 @@ function App() {
         <Route path="/name" element={<NameForm />} />
         <Route path="/edit-profile" element={<EditProfile />} />
          <Route path="/admin/*" element={<AdminRoutes />} />
+         
+
 
       </Routes>
     </Router>

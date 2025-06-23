@@ -6,16 +6,23 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('adminToken');
-    if (!token) navigate('/admin/login');
-  }, []);
+
+    if (!token) {
+      // No token: redirect to login
+      navigate('/admin/login');
+    }
+  }, [navigate]);
+
+  const handleLogout = () => {
+    localStorage.removeItem('adminToken');
+    navigate('/admin/login');
+  };
 
   return (
-    <div>
+    <div className="admin-dashboard-container">
       <h2>Admin Dashboard</h2>
-      <button onClick={() => {
-        localStorage.removeItem('adminToken');
-        navigate('/admin/login');
-      }}>
+
+      <button onClick={handleLogout} className="logout-button">
         Logout
       </button>
     </div>

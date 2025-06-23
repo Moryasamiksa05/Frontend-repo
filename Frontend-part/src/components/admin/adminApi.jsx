@@ -1,5 +1,18 @@
 import API from '../../api';
 
-export const loginAdmin = (email, password) => {
-  return API.post('/api/admin/login', { email, password }).then(res => res.data);
+
+export const loginAdmin = async (email, password) => {
+  try {
+    const response = await API.post('/api/admin/login', { email, password });
+
+   
+    if (!response.data || !response.data.token) {
+      throw new Error('Invalid response from server');
+    }
+
+    return response.data;
+  } catch (error) {
+    
+    throw error;
+  }
 };

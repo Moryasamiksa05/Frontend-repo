@@ -1,12 +1,13 @@
-import { Routes, Route } from 'react-router-dom';
-import AdminLogin from '../components/admin/AdminLogin';
-import AdminDashboard from '../components/admin/AdminDashboard';
+import React from 'react';
+import { Outlet } from 'react-router-dom';
 
-const AdminRoutes = () => (
-  <Routes>
-    <Route path="login" element={<AdminLogin />} />
-    <Route path="dashboard" element={<AdminDashboard />} />
-  </Routes>
-);
+const AdminRoutes = () => {
+  return (
+    <div className="admin-layout">
+      
+      <Outlet />
+    </div>
+  );
+};
 
 export default AdminRoutes;

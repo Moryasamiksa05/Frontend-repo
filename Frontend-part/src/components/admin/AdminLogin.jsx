@@ -1,5 +1,3 @@
-
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { loginAdmin } from './adminApi';
@@ -24,27 +22,32 @@ const AdminLogin = () => {
     setLoading(true);
     try {
       const res = await loginAdmin(form.email, form.password);
-      localStorage.setItem('adminToken', res.token);
-      toast.success('Login successful!');
-      setTimeout(() => {
-        navigate('/admin/dashboard');
-      }, 1500);
+
+      if (res && res.token) {
+        localStorage.setItem('adminToken', res.token);
+        toast.success('Login successful!');
+        setTimeout(() => {
+          navigate('/admin/dashboard');
+        }, 1500);
+      } else {
+        throw new Error('Invalid response from server');
+      }
     } catch (err) {
       const msg = err?.response?.data?.error || 'Login failed';
       setError(msg);
       toast.error(msg);
     } finally {
       setLoading(false);
-      setForm({ email: '', password: '' }); 
     }
   };
 
   return (
     <div className="admin-login-container">
-      <h2  className='home'>Admin Login</h2>
+      <h2 className="home">Admin Login</h2>
       <form onSubmit={handleSubmit} className="admin-login-form">
         <input
           name="email"
+          type="email"
           placeholder="Email"
           value={form.email}
           onChange={handleChange}
@@ -69,4 +72,3 @@ const AdminLogin = () => {
 };
 
 export default AdminLogin;
-
